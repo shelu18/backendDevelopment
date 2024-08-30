@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";   //it is used to access the cookes of
 const app = express();
 
 app.use(cors({
-    origin:ProcessingInstruction.env.CORS_ORIGIN,
+    origin: process.env.CORS_ORIGIN,
      credentials : true
 }))
 app.use(express.json({
@@ -22,7 +22,7 @@ app.use(cookieParser())
 
 
 //route import 
-import userRouter from './routes/user.router.js';
+import userRouter from './routes/user.routes.js';
 
 //route decleration
 app.use("/api/v1/users",userRouter)    //on the user router the userrouter will be activated
