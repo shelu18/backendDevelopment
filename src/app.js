@@ -19,4 +19,13 @@ app.use (express.urlencoded({extended:true,
 app.use(express.static("public"));  //it is used to serve the static files from the public folder this configuration is generally for the keeping the data locally at the server 
 
 app.use(cookieParser())
+
+
+//route import 
+import userRouter from './routes/user.router.js';
+
+//route decleration
+app.use("/api/v1/users",userRouter)    //on the user router the userrouter will be activated
+
+
 export default app;
